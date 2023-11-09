@@ -22,7 +22,11 @@ constructor () {
     }
     this.employees.push(empleado);
 }
-getEmployee (){
+getEmployee(id: number) {
+  return this.employees.find((e) =>e.id==id);
+  }
+
+getEmployees(){
     return this.employees;
 }
 agregarEmpleado(empleadoModel: EmpleadoModel) {
@@ -46,19 +50,6 @@ modificarEmpleado(id: number, modelo: EmpleadoModel) {
         return "El empleado no existe"
 
 }
-
-//eliminarEmpleado(id: number, modelo: EmpleadoModel) {
-  //if(((id)>0)&&((id)<this.employees.length))
-  //{
-  //this.employees.splice((id)-1,1)  
-  //return this.employees;
-  //}
-  //else
-  //{
-   //return "Empleado no existente"   
-  //}
-  //}
-
 eliminarEmpleado(id) {
   if(((id)>0)&&((id)<this.employees.length))
   {
