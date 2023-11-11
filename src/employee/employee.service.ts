@@ -51,14 +51,12 @@ modificarEmpleado(id: number, modelo: EmpleadoModel) {
 
 }
 eliminarEmpleado(id) {
-  if(((id)>0)&&((id)<this.employees.length))
-  {
-  this.employees.splice((id)-1,1)
-  return this.employees
+  let empleadoIndex = this.employees.findIndex((e) => e.id == id);
+  if (empleadoIndex !== -1) {
+    this.employees.splice(empleadoIndex, 1);
+    return this.employees;
+  } else {
+    return 'El empleado no existe';
   }
-  else
-  {
-   return "Empleado no existente"   
   }
-}
-}
+  }
